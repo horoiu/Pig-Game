@@ -1,6 +1,7 @@
 
-let scores, roundScore, activePlayer, gamePlaying;
+let scores, roundScore, activePlayer, gamePlaying, winValue;
 
+winValue = 15;
 const diceDOM = document.querySelector('.dice');
 const score0 = document.getElementById('score-0');
 const score1 = document.getElementById('score-1');
@@ -53,7 +54,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     
         document.getElementById('score-' +  activePlayer).textContent = scores[activePlayer];
     
-        if (scores[activePlayer] >=20) {
+        if (scores[activePlayer] >= winValue) {
             document.getElementById('name-' + activePlayer).textContent = 'WINNER !!!';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
             document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
@@ -80,4 +81,16 @@ function nextPlayer() {
     player0Pannel.classList.toggle('active');
     player1Pannel.classList.toggle('active');
 };
+
+
+const winScoreDOM = document.querySelector('.win-score > *');
+const winScoreInput = document.getElementById('inputScore');
+const winValueBtn = document.querySelector('.btn-win-value');
+
+winValueBtn.addEventListener('click', setWinValue);
+
+function setWinValue() {
+    winValue = winScoreInput.value;
+    // winScoreDOM.textContent = winValue;
+}
 

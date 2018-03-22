@@ -141,3 +141,52 @@ i {
 
 .winner { background-color: #f7f7f7; }
 .winner .player-name { font-weight: 300; color: #EB4D4D; }
+
+.label,
+.input, 
+.btn-win-value {
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #555;
+    position: absolute;
+    top: 93%;
+}
+
+.label {
+    left: 30%;
+}
+
+.input {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    text-align: center;
+}
+.input:focus {
+    outline: none;
+}
+
+.btn-win-value {
+    left: 55%;
+    width: 40px;
+}
+
+
+.footer {
+    color: #f7f7f7;
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer a {
+    text-decoration: none;
+    color: #f7f7f7;    
+}
+
+.footer a:hover {
+    color: yellow;
+}
